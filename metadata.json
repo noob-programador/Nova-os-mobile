@@ -1,0 +1,6 @@
+{
+  "name": "NovaOS Mobile",
+  "description": "A complete virtual mobile operating system simulation in React with boot sequence, home screen, widgets, multitasking, notification center, rich apps (Calculator, Notepad, File Explorer, Settings, Terminal, Clock, Camera/Gallery) and 6 playable retro games (Snake, Tetris, Pac-Man, Minesweeper, Chess, Tic-Tac-Toe).",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
