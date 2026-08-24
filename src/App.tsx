@@ -5,6 +5,8 @@ import {
   Power,
   Volume2,
   VolumeX,
+  Smartphone,
+  Download,
 } from 'lucide-react';
 import { OSProvider, useOS } from './context/OSContext';
 import { sounds } from './utils/sound';
@@ -20,6 +22,7 @@ import { NotificationCenter } from './components/notifications/NotificationCente
 import { MultitaskingView } from './components/multitasking/MultitaskingView';
 import { AppContainer } from './components/common/AppContainer';
 import { EdgeLighting } from './components/common/EdgeLighting';
+import { PWAInstallModal } from './components/common/PWAInstallModal';
 
 const MainScreen: React.FC = () => {
   const {
@@ -29,6 +32,9 @@ const MainScreen: React.FC = () => {
     unlockOS,
     updateSettings,
     getActiveWallpaper,
+    isPwaInstallModalOpen,
+    openPwaInstallModal,
+    closePwaInstallModal,
   } = useOS();
 
   const [frameMode, setFrameMode] = useState<'mobile-frame' | 'fullscreen'>('mobile-frame');
@@ -91,6 +97,15 @@ const MainScreen: React.FC = () => {
 
         {/* Quick Simulator Utilities */}
         <div className="flex items-center space-x-2">
+          <button
+            onClick={openPwaInstallModal}
+            className="p-1.5 rounded-xl bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/40 text-cyan-300 hover:from-cyan-500/30 hover:to-blue-500/30 flex items-center space-x-1.5 transition-all shadow-sm shadow-cyan-500/10 cursor-pointer"
+            title="Instalar NovaOS como PWA no Celular"
+          >
+            <Download className="w-3.5 h-3.5" />
+            <span className="text-[11px] font-semibold">Instalar no Celular</span>
+          </button>
+
           <button
             onClick={() => {
               sounds.playTap();
@@ -222,6 +237,9 @@ const MainScreen: React.FC = () => {
           <EdgeLighting />
         </div>
       </main>
+
+      {/* PWA Install Modal / Drawer Guide */}
+      <PWAInstallModal isOpen={isPwaInstallModalOpen} onClose={closePwaInstallModal} />
     </div>
   );
 };

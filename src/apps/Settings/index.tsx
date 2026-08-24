@@ -47,6 +47,7 @@ export const SettingsApp: React.FC = () => {
     reboot,
     t,
     sendNotification,
+    openPwaInstallModal,
   } = useOS();
 
   const wallpaperInputRef = useRef<HTMLInputElement>(null);
@@ -800,6 +801,31 @@ export const SettingsApp: React.FC = () => {
             >
               <Sparkles className="w-3.5 h-3.5" />
               <span>Testar Pulso de Notificação</span>
+            </button>
+          </div>
+
+          {/* PWA Mobile Installation */}
+          <div className="space-y-3 bg-gradient-to-br from-cyan-950/40 via-zinc-900 to-purple-950/30 border border-cyan-500/40 rounded-2xl p-4 text-xs shadow-lg shadow-cyan-950/50">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-2 text-xs font-bold text-cyan-400 uppercase tracking-wider">
+                <Smartphone className="w-4 h-4" />
+                <span>Instalar no Celular (PWA)</span>
+              </div>
+              <span className="px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 text-[10px] font-bold border border-cyan-500/40">
+                PWA Nativo
+              </span>
+            </div>
+
+            <p className="text-[11px] text-zinc-300 leading-relaxed">
+              Instale o NovaOS na tela inicial do seu smartphone (Android ou iPhone/iPad) para utilizar em tela cheia com alta velocidade e suporte offline.
+            </p>
+
+            <button
+              onClick={openPwaInstallModal}
+              className="w-full py-2.5 px-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-zinc-950 font-bold text-xs flex items-center justify-center space-x-2 transition-all active:scale-98 shadow-md shadow-cyan-500/25 cursor-pointer"
+            >
+              <Download className="w-3.5 h-3.5" />
+              <span>Abrir Guia de Instalação no Celular</span>
             </button>
           </div>
 

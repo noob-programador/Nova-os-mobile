@@ -335,6 +335,9 @@ interface OSContextType {
   bringWindowToFront: (appId: AppId) => void;
   updateWindowState: (appId: AppId, partial: Partial<WindowState>) => void;
   switchUserProfile: (role: 'owner' | 'guest' | 'kid') => void;
+  isPwaInstallModalOpen: boolean;
+  openPwaInstallModal: () => void;
+  closePwaInstallModal: () => void;
 }
 
 const OSContext = createContext<OSContextType | null>(null);
@@ -379,6 +382,17 @@ export const OSProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [installedApps] = useState<AppConfig[]>(DEFAULT_APPS);
   const [lastNotificationTrigger, setLastNotificationTrigger] = useState<number>(0);
   const [activeToastNotification, setActiveToastNotification] = useState<SystemNotification | null>(null);
+  const [isPwaInstallModalOpen, setIsPwaInstallModalOpen] = useState(false);
+
+  const openPwaInstallModal = useCallback(() => {
+    sounds.playTap();
+    setIsPwaInstallModalOpen(true);
+  }, []);
+
+  const closePwaInstallModal = useCallback(() => {
+    sounds.playTap();
+    setIsPwaInstallModalOpen(false);
+  }, []);
 
   const dismissToast = useCallback(() => {
     setActiveToastNotification(null);
@@ -725,6 +739,9 @@ export const OSProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
         bringWindowToFront,
         updateWindowState,
         switchUserProfile,
+        isPwaInstallModalOpen,
+        openPwaInstallModal,
+        closePwaInstallModal,
       }}
     >
       {children}

@@ -1,16 +1,41 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Google AI Studio App</title>
-    <meta name="description" content="An application built with Google AI Studio." />
-    <meta property="og:title" content="My Google AI Studio App" />
-    <meta property="og:description" content="An application built with Google AI Studio." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>NovaOS Mobile</title>
+    <meta name="description" content="Sistema Operacional Mobile Virtual e Interativo com Widgets, Jogos e Aplicativos" />
+
+    <!-- PWA Web Manifest -->
+    <link rel="manifest" href="/manifest.webmanifest" />
+
+    <!-- Theme & Status Bar Colors -->
+    <meta name="theme-color" content="#09090b" />
+    <meta name="color-scheme" content="dark" />
+
+    <!-- iOS Apple Touch & Fullscreen Web App -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="NovaOS" />
+    <link rel="apple-touch-icon" href="/icon-192.svg" />
+    <link rel="apple-touch-startup-image" href="/icon-512.svg" />
+
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" type="image/svg+xml" href="/icon-192.svg" />
+
+    <!-- Android / Windows PWA Tags -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="NovaOS Mobile" />
+    <meta name="msapplication-TileColor" content="#09090b" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="NovaOS Mobile" />
+    <meta property="og:description" content="Sistema Operacional Mobile Virtual e Interativo com Widgets, Jogos e Aplicativos" />
     <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:image" content="/icon-512.svg" />
   </head>
-  <body>
+  <body class="bg-black overflow-hidden select-none">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

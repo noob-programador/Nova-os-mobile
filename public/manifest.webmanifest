@@ -1,0 +1,72 @@
+{
+  "name": "NovaOS Mobile",
+  "short_name": "NovaOS",
+  "description": "Sistema Operacional Mobile Virtual e Interativo com Widgets, Jogos e Aplicativos",
+  "start_url": "/",
+  "id": "/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui", "window-controls-overlay"],
+  "background_color": "#09090b",
+  "theme_color": "#09090b",
+  "orientation": "portrait",
+  "lang": "pt-BR",
+  "dir": "auto",
+  "categories": ["utilities", "productivity", "games", "entertainment"],
+  "icons": [
+    {
+      "src": "/icon-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Notas",
+      "short_name": "Notas",
+      "description": "Abrir bloco de anotações",
+      "url": "/?app=notepad",
+      "icons": [{ "src": "/favicon.svg", "sizes": "64x64" }]
+    },
+    {
+      "name": "Calculadora",
+      "short_name": "Calc",
+      "description": "Abrir calculadora científica",
+      "url": "/?app=calculator",
+      "icons": [{ "src": "/favicon.svg", "sizes": "64x64" }]
+    },
+    {
+      "name": "Cobrinha",
+      "short_name": "Snake",
+      "description": "Jogar Snake Arcade",
+      "url": "/?app=snake",
+      "icons": [{ "src": "/favicon.svg", "sizes": "64x64" }]
+    },
+    {
+      "name": "Ajustes",
+      "short_name": "Ajustes",
+      "description": "Configurações do sistema",
+      "url": "/?app=settings",
+      "icons": [{ "src": "/favicon.svg", "sizes": "64x64" }]
+    }
+  ]
+}
